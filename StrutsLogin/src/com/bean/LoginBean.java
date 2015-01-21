@@ -75,6 +75,7 @@ public class LoginBean extends ActionForm{
 		if(this.pwd.length()<3 || this.pwd.length() > 20){
 			errors.add("pwd", new ActionMessage("password.length"));
 		}
+		this.reset(mapping, request);
 		return errors;
 	}
 	

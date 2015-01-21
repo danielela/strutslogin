@@ -13,7 +13,7 @@
 <H2>Hello Success Home Page</H2>
 <h1>
 
-<bean:write name="lBean" property="userId" />
+<bean:write name="userBean" property="fname" />
 
 </h1>
 </body>
