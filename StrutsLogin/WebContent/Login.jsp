@@ -10,8 +10,13 @@
 </head>
 <body>
 <html:form action="loginAction" >
-UserID: <html:text property="userId"></html:text><br>
-Password:<html:password property="pwd"></html:password><br>
+
+UserID: <html:text property="userId"></html:text>
+<html:errors property="userId" />
+<br>
+Password:<html:password property="pwd"></html:password>
+<html:errors property="pwd" />
+<br>
 Country:
 <html:select property="country">
 	<html:option value=""></html:option>

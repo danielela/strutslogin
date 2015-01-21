@@ -5,8 +5,10 @@ import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 public class LoginBean extends ActionForm{
 
@@ -61,6 +63,19 @@ public class LoginBean extends ActionForm{
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		userId="";
 		pwd="";
+	}
+	
+	@Override
+	public ActionErrors validate(ActionMapping mapping,
+			HttpServletRequest request) {
+		ActionErrors errors=new ActionErrors();
+		if(this.userId.length()<3){
+			errors.add("userId", new ActionMessage("userid.minlenth"));
+		}
+		if(this.pwd.length()<3 || this.pwd.length() > 20){
+			errors.add("pwd", new ActionMessage("password.length"));
+		}
+		return errors;
 	}
 	
 }

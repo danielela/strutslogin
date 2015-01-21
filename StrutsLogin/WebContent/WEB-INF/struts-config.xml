@@ -21,5 +21,6 @@
 	</action>
    
     </action-mappings>
+    <message-resources parameter="com.resources.MessageResources"></message-resources>
 </struts-config>
 
